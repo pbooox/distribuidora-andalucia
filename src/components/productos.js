@@ -6,7 +6,7 @@ import Layourt from './layout';
 
 export const query = graphql`
   query($slug: String!) {
-    allDatoCmsHabitacion(filter: {slug: {eq: $slug}}) {
+    allDatoCmsProducto(filter: {slug: {eq: $slug}}) {
       nodes {
         titulo
         contenido
@@ -21,7 +21,7 @@ export const query = graphql`
 `;
 
 
-const HabitacionTemplate = ({ data: { allDatoCmsHabitacion: { nodes } } }) => {
+const ProductoTemplate = ({ data: { allDatoCmsProducto: { nodes } } }) => {
 
   const { titulo, contenido, imagen } = nodes[0];
   // console.log(nodes);
@@ -50,4 +50,4 @@ const HabitacionTemplate = ({ data: { allDatoCmsHabitacion: { nodes } } }) => {
   )
 }
 
-export default HabitacionTemplate;
+export default ProductoTemplate;

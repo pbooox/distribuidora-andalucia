@@ -1,7 +1,7 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const resultado = await graphql(`
     query {
-      allDatoCmsHabitacion {
+      allDatoCmsProducto {
         nodes {
           slug
         }
@@ -17,13 +17,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   //Si hay resultados
   
-  const habitaciones = resultado.data.allDatoCmsHabitacion.nodes;
-  habitaciones.forEach(habitacion => {
+  const productos = resultado.data.allDatoCmsProducto.nodes;
+  productos.forEach(producto => {
     actions.createPage({
-      path: habitacion.slug,
-      component: require.resolve('./src/components/habitaciones.js'),
+      path: producto.slug,
+      component: require.resolve('./src/components/productos.js'),
       context: {
-        slug: habitacion.slug
+        slug: producto.slug
       }
     });
   });

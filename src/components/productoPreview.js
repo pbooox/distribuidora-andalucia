@@ -17,9 +17,9 @@ const Boton = styled(Link)`
   text-align: center;
 `
 
-const HabitacionPreview = ({habitacion}) => {
+const ProductoPreview = ({producto}) => {
   
-  const { contenido, imagen, titulo, slug } = habitacion;
+  const { contenido, imagen, titulo, slug } = producto;
   
   return (
     <div
@@ -42,10 +42,10 @@ const HabitacionPreview = ({habitacion}) => {
           `}
         >{titulo}</h3>
         <p>{contenido}</p>
-        <Boton to={slug}>Ver habitación</Boton>
+        <Boton to={slug}>Ver producto</Boton>
       </div>
     </div>
   );
 }
 
-export default HabitacionPreview;
+export default ProductoPreview;

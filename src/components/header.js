@@ -3,6 +3,7 @@ import {css} from '@emotion/core';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import Navegacion from './nav';
+import foto from '../images/logo.png'
 
 const EnlaceHome = styled(Link)`
   color: #FFF;
@@ -14,7 +15,7 @@ const Header = () => {
   return (
     <header 
       css={css`
-        background-color: rgba(44,64,80); 
+        background-color: #034838; 
         padding: 1rem;  
       `}
     >
@@ -27,13 +28,25 @@ const Header = () => {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            
+          }
+          img {
+            width: 288px; 
+            margin: auto;
+            display: block;
+            @media (max-width: 768px) {
+              margin-bottom: 2rem;
+              width: 210px;
+            }
           }
         `}
       >
         <EnlaceHome
           to='/'
         >
-          <h1>Hotel Gatsby</h1>
+          <img 
+            src={foto} 
+          />
         </EnlaceHome>
         <Navegacion />
 

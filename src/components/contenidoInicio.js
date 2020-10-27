@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Image from 'gatsby-image';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+import prueba from '../videos/prueba2.mp4';
 
 const TextoInicio = styled.div`
   padding-top: 4rem;
@@ -52,7 +53,14 @@ const ContenidoInicio = () => {
       >{titulo}</h2>  
       <TextoInicio>
         <p>{contenido}</p>
-        <Image fluid={imagen.fluid}/>
+        {/* <Image fluid={imagen.fluid}/> */}
+        <video css={css`
+          width: 100%;
+          height: auto;
+        `}
+          controls>
+          <source src={prueba} type="video/mp4" />
+        </video>
       </TextoInicio>
     </>
   );

@@ -1,10 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-const useHabitaciones = () => {
+const useProducto = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      allDatoCmsHabitacion {
+      allDatoCmsProducto  {
         nodes {
           id
           titulo
@@ -21,13 +21,13 @@ const useHabitaciones = () => {
   `)
   // console.log(data);
   // return( <p>desde hook</p> );
-  return data.allDatoCmsHabitacion.nodes.map(habitacion => ({
-    id: habitacion.id,
-    titulo: habitacion.titulo,
-    contenido: habitacion.contenido,
-    imagen: habitacion.imagen,
-    slug: habitacion.slug,
+  return data.allDatoCmsProducto.nodes.map(producto => ({
+    id: producto.id,
+    titulo: producto.titulo,
+    contenido: producto.contenido,
+    imagen: producto.imagen,
+    slug: producto.slug,
   }))
 }
 
-export default useHabitaciones;
+export default useProducto;

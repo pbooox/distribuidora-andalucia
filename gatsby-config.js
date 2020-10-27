@@ -31,8 +31,9 @@ module.exports = {
     {
       resolve: 'gatsby-source-datocms',
       options: {
-        apiToken: 'd4fdd8f3c54a082a07ae59088b9818'
+        apiToken: '97ab7e80a40d68fba02fbab2be18e9'
       }
     },
+    `gatsby-plugin-fontawesome-css`,
   ],
 }

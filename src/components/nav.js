@@ -16,7 +16,7 @@ const NavLink =  styled(Link)`
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1rem;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Questrial', sans-serif;
   text-decoration: none;
   padding: 1rem;
   margin-right: 1rem;
@@ -40,6 +40,10 @@ const Navegacion = () => {
         to={'/nosotros'}
         activeClassName="pagina-actual"
       >Nosotros</NavLink>
+      <NavLink 
+        
+        activeClassName="pagina-actual"
+      >Contacto</NavLink>
     </Nav>
   )
 }
