@@ -10,9 +10,10 @@ const Contacto = () => {
       method="POST"
       data-netlify="true"
     >
-      
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="form-name" value="contact" />
       <input name="name" placeholder="nombre" type="text"/>
-      <button>send</button>
+      <button type="submit" >send</button>
     </form>
       {/* <ContenidoForm /> */}
     </Layout>
