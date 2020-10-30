@@ -6,7 +6,6 @@ const ContenidoForm = () => {
       name="contact"
       method="post"
       data-netlify="true"
-      data-netlify-honeypot="bot-field"
     >
       <div className="input_field">
         <label>Nombre</label>
