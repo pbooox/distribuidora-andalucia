@@ -7,9 +7,10 @@ const Contacto = () => {
     <Layout>
     <form
       name="contact"
-      method="post"
+      method="POST"
       data-netlify="true"
     >
+      
       <input name="name" placeholder="nombre" type="text"/>
       <button>send</button>
     </form>
