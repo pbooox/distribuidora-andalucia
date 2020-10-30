@@ -7,9 +7,11 @@ const ContenidoForm = () => {
       method="post"
       data-netlify="true"
     >
-      <input name="name" placeholder="nombre" type="text"/>
-      <button>send</button>
-      {/* <div className="input_field">
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="form-name" value="contact" />
+      {/* <input name="name" placeholder="nombre" type="text"/>
+      <button>send</button> */}
+      <div className="input_field">
         <label>Nombre</label>
         <input name="nombre" type="text" className="input" />
       </div>
@@ -31,7 +33,7 @@ const ContenidoForm = () => {
       </div>
       <div className="inputfield">
         <button type="submit">Enviar</button>
-      </div> */}
+      </div>
     </form>
   )
 }

@@ -5,7 +5,7 @@ import ContenidoForm from '../components/contenidoForm';
 const Contacto = () => {
   return (
     <Layout>
-    <form
+    {/* <form
       name="contact"
       method="POST"
       data-netlify="true"
@@ -14,8 +14,8 @@ const Contacto = () => {
       <input type="hidden" name="form-name" value="contact" />
       <input name="name" placeholder="nombre" type="text"/>
       <button type="submit" >send</button>
-    </form>
-      {/* <ContenidoForm /> */}
+    </form> */}
+      <ContenidoForm />
     </Layout>
   )
 }
