@@ -51,6 +51,7 @@ const layout = (props) => {
       <Helmet>
         <title>{siteName}</title>
         <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, intial-scale=1.0" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet" /> 
         {/* <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />  */}
