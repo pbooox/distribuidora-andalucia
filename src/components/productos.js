@@ -41,7 +41,11 @@ const ProductoTemplate = ({ data: { allDatoCmsProducto: { nodes } } }) => {
             margin-top: 4rem;
           `}
         >{titulo}</h1>
-        <p>{contenido}</p>
+        <p
+          css={css`
+            text-align: justify;
+          `}
+        >{contenido}</p>
         <Image
           fluid={imagen.fluid}
         />

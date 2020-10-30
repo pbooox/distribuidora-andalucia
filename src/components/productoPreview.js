@@ -15,7 +15,7 @@ const Boton = styled(Link)`
   text-transform: uppercase;
   font-weight: 700;
   text-align: center;
-`
+`;
 
 const ProductoPreview = ({producto}) => {
   
@@ -41,7 +41,11 @@ const ProductoPreview = ({producto}) => {
             font-size: 3rem;
           `}
         >{titulo}</h3>
-        <p>{contenido}</p>
+        <p
+          css={css`
+            text-align: justify;
+          `}
+        >{contenido}</p>
         <Boton to={slug}>Ver producto</Boton>
       </div>
     </div>

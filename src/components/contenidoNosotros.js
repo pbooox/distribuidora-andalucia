@@ -17,6 +17,7 @@ const Contenido = styled.main`
   }
 
   p {
+    text-align: justify;
     line-height: 2;
     margin-top: 2rem;
   }

@@ -46,6 +46,7 @@ const Header = () => {
         >
           <img 
             src={foto} 
+            alt="Logotipo"
           />
         </EnlaceHome>
         <Navegacion />

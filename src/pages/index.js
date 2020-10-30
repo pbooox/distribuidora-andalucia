@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import Layout from '../components/layout';
-import ImagenHotel from '../components/imagenHotel';
+// import ImagenHotel from '../components/imagenHotel';
 import ContenidoInicio from '../components/contenidoInicio';
 import ProductoPreview from '../components/productoPreview';
 import useProductos from '../hooks/use-productos';

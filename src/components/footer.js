@@ -3,7 +3,7 @@ import {css} from '@emotion/core';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import Navegacion from './nav';
-import logo from '../images/logoblanco.png';
+// import logo from '../images/logoblanco.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkedAlt, faPhoneSquareAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -55,9 +55,6 @@ const Footer = ({title}) => {
           <EnlaceHome
             to='/'
           >
-            {/* <img 
-              src={logo} 
-            />  */}
             <div 
               css={css`
                   padding-top: 1rem;
