@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { graphql, useStaticQuery } from 'gatsby';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
@@ -69,6 +70,51 @@ const ContenidoForm = () => {
 
   const { titulo, contenido } = informacion.allDatoCmsPagina.nodes[0];
 
+
+  // const [datos, setDatos] = useState({
+  //   nombre: '',
+  //   correo: '',
+  //   telefono: '',
+  //   asunto: '',
+  //   mensaje: ''
+  // })
+
+  const onSubmit = (data, e) => {
+    // e.preventDefault();
+    // console.log(data);
+    // e.target.reset();
+    try {
+      fetch("/", {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      });
+    } catch (error) {
+      // handle server errors
+    }
+  }
+
+  const {register, errors, handleSubmit} = useForm();
+
+  // const handleInputChange = (event) => {
+  //   // console.log(event.target.name)
+  //   // console.log(event.target.value)
+  //   setDatos({
+  //       ...datos,
+  //       [event.target.name] : event.target.value
+  //   })
+  // }
+
+  // const enviarDatos = (event) => {
+  //   event.preventDefault()
+  //   console.log('enviando datos...' + datos.nombre + ' ' + datos.correo)
+  // }
+
+
   return (
     <>
       <h2
@@ -91,6 +137,7 @@ const ContenidoForm = () => {
         `}
       >
         <form
+          onSubmit={handleSubmit(onSubmit)}
           css={css`
             width: 100%;
           `}
@@ -100,21 +147,54 @@ const ContenidoForm = () => {
         >
         
           <input type="hidden" name="form-name" value="contact" />
+
           <DivField>
             <LabelField>Nombre</LabelField>
-            <InputField name="nombre" type="text" />
+            <InputField name="nombre" type="text" ref={register({
+              required: {
+                value: true,
+                message: 'Campo requerido'
+              }
+            })}/>
+            <span>
+                {errors?.nombre?.message}
+            </span>
           </DivField>
           <DivField>
             <LabelField>Correo electrónico</LabelField>
-            <InputField name="correo" type="email" />
+            <InputField name="correo" type="email" ref={register({
+              required: {
+                value: true,
+                message: 'Campo requerido'
+              }
+            })}/>
+            <span>
+                {errors?.correo?.message}
+            </span>            
           </DivField>
           <DivField>
             <LabelField>Numero de teléfono</LabelField>
-            <InputField name="telefono" type="text" />
+            <InputField name="telefono" type="text" ref={register({
+              required: {
+                value: true,
+                message: 'Campo requerido'
+              }
+            })}/>
+            <span>
+                {errors?.telefono?.message}
+            </span>            
           </DivField>
           <DivField>
             <LabelField>Asunto</LabelField>
-            <InputField name="asunto" type="text" />
+            <InputField name="asunto" type="text" ref={register({
+              required: {
+                value: true,
+                message: 'Campo requerido'
+              }
+            })}/>
+            <span>
+                {errors?.asunto?.message}
+            </span>            
           </DivField>
           <DivField>
             <LabelField>Mensaje</LabelField>
@@ -136,7 +216,16 @@ const ContenidoForm = () => {
               `}
               name="mensaje" 
               type="text" 
+              ref={register({
+                required: {
+                  value: true,
+                  message: 'Campo requerido'
+                }
+              })}
             />
+            <span>
+                {errors?.mensaje?.message}
+            </span>            
           </DivField>
           <DivField>
             <button 
