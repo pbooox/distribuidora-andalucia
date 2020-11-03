@@ -84,7 +84,7 @@ const ContenidoForm = () => {
     // console.log(data);
     // e.target.reset();
     try {
-      fetch("/", {
+      fetch("/contacto", {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',
