@@ -83,19 +83,25 @@ const ContenidoForm = () => {
     // e.preventDefault();
     // console.log(data);
     // e.target.reset();
-    try {
-      fetch("https://tender-cori-95c4c7.netlify.app/contacto/", {
+    // try {
+      fetch('/', {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',
-        body: JSON.stringify(data),
+        // body: JSON.stringify(data),
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
-      });
-    } catch (error) {
-      // handle server errors
-    }
+        body: encode({ "form-name": "contact", ...data })
+      })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+      e.preventDefault();
+      
+    // } catch (error) {
+    //   // handle server errors
+    // }
   }
 
   const {register, errors, handleSubmit} = useForm();
@@ -137,13 +143,13 @@ const ContenidoForm = () => {
         `}
       >
         <form
-          // onSubmit={handleSubmit(onSubmit)}
-          css={css`
-            width: 100%;
-          `}
-          name="contact"
-          method="post"
-          data-netlify="true"
+          onSubmit={handleSubmit(onSubmit)}
+          // css={css`
+          //   width: 100%;
+          // `}
+          // name="contact"
+          // method="post"
+          // data-netlify="true"
         >
         
           <input type="hidden" name="form-name" value="contact" />
