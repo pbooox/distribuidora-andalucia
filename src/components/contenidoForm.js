@@ -78,11 +78,11 @@ const ContenidoForm = () => {
   //   asunto: '',
   //   mensaje: ''
   // })
-  // const encode = (data) => {
-  //   return Object.keys(data)
-  //       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-  //       .join("&");
-  // }
+  const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
 
   const onSubmit = (data, e) => {
     // e.preventDefault();
@@ -96,8 +96,8 @@ const ContenidoForm = () => {
         headers: {
           'Content-type': 'text/html; charset=UTF-8',
         },
-        body: JSON.stringify(data),
-        // body: encode({ "form-data": "contact", ...data })
+        // body: JSON.stringify(data),
+        body: encode({ "form-data": "contact", ...data })
       })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
