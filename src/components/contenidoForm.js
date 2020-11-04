@@ -84,7 +84,7 @@ const ContenidoForm = () => {
     // console.log(data);
     // e.target.reset();
     try {
-      fetch("https://tender-cori-95c4c7.netlify.app/contacto", {
+      fetch("https://tender-cori-95c4c7.netlify.app/contacto/", {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',
