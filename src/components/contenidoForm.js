@@ -78,11 +78,11 @@ const ContenidoForm = () => {
   //   asunto: '',
   //   mensaje: ''
   // })
-  const encode = (data) => {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-  }
+  // const encode = (data) => {
+  //   return Object.keys(data)
+  //       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+  //       .join("&");
+  // }
 
   const onSubmit = (data, e) => {
     // e.preventDefault();
@@ -93,16 +93,16 @@ const ContenidoForm = () => {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',
-        // body: JSON.stringify(data),
         headers: {
-          'Content-type': 'application/json; charset=UTF-8',
+          'Content-type': 'text/html; charset=UTF-8',
         },
-        body: encode({ "form-name": "contact", ...data })
+        body: JSON.stringify(data),
+        // body: encode({ "form-data": "contact", ...data })
       })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
 
-      e.preventDefault();
+      // e.preventDefault();
       
     // } catch (error) {
     //   // handle server errors
