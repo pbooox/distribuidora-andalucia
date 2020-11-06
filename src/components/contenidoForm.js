@@ -89,15 +89,15 @@ const ContenidoForm = () => {
     // console.log(data);
     // e.target.reset();
     // try {
-      fetch('/contacto/', {
+      fetch('/contacto', {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',
         headers: {
-          'Content-type': 'text/html; charset=UTF-8',
+          'Content-type': 'application/json; charset=UTF-8',
         },
         // body: JSON.stringify(data),
-        body: encode({ "form-data": "contact", ...data })
+        body: encode({ "form-name": "contact", ...data })
       })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
@@ -148,13 +148,13 @@ const ContenidoForm = () => {
         `}
       >
         <form
-          onSubmit={handleSubmit(onSubmit)}
-          // css={css`
-          //   width: 100%;
-          // `}
-          // name="contact"
-          // method="post"
-          // data-netlify="true"
+          // onSubmit={handleSubmit(onSubmit)}
+          css={css`
+            width: 100%;
+          `}
+          name="contact"
+          method="post"
+          data-netlify="true"
         >
         
           <input type="hidden" name="form-name" value="contact" />
